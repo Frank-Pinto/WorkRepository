@@ -1,0 +1,27 @@
+"""
+IPO Chart - Problem 2 (M3P2)
+============================
+INPUT:
+-Last Name (string)
+- Midterm Exam Score (float)
+- Final Exam Score (float)
+PROCESS:
+-Total Exam Points = ((0.4 * Midterm Exam Score) + (0.6 * Final Exam Score))
+OUTPUT:
+- Last Name
+- Total Exam Points (Formatted to 2 decimal places)
+============================
+"""
+
+#1. Inputs
+last_name=input("Enter your Last Name: ")
+midterm_score=float(input("Enter your Midterm Exam Score: "))
+final_score=float(input("Enter your Final Exam Score: "))
+
+#2. Processing
+total_exam_points=(0.4*midterm_score)+(0.6*final_score)
+
+#3. Output
+print("\n--- Exam Summary ---")
+print(f"Student Last Name: {last_name.title()}")
+print(f"Total Exam Points: {total_exam_points:,.2f}")

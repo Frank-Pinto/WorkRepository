@@ -1,0 +1,26 @@
+"""
+IPO Chart - Problem 3 (M3P3)
+============================
+INPUT:
+-Job Title
+-Total Amount
+-Number of People
+PROCESS:
+-Total Paid Out Individually = Total Amount / Number of People
+OUTPUT:
+- Job Title
+- Total Paid Out Individually (Formatted to 2 decimal places)
+============================
+"""
+
+#1. Inputs
+job_title = input("Enter Job Title: ")
+total_amount = float(input("Enter Total Amount: "))
+number_of_people = int(input("Enter Number of People: "))
+
+#2. Process
+total_paid_out_individually = total_amount / number_of_people
+
+#3. Output
+print("\nJob Title: ", job_title)
+print("Total Paid Out Individually: ${:.2f}".format(total_paid_out_individually))

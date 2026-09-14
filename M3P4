@@ -1,0 +1,39 @@
+"""
+IPO Chart - Problem 4 (M3P4)
+============================
+INPUT:
+- Make (string)
+- Model (string)
+- MSRP Amount (float)
+- Discount Percent (float)
+PROCESS:
+- Amount Off = MSRP Amount * Discount Percent
+- Discounted Price = MSRP Amount - Amount Off
+OUTPUT:
+- Make
+- Model
+- MSRP Amount (Formatted to 2 decimal places)
+- Discount Percent
+- Amount Off (Formatted to 2 decimal places)
+- Discounted Price (Formatted to 2 decimal places)
+============================
+"""
+
+#1. Inputs
+make = input("Enter the Make: ")
+model = input("Enter the Model: ")
+msrp = float(input("Enter the MSRP Amount: "))
+discount_percent = float(input("Enter the Discount Percent as a decimal: "))
+
+#2. Processing
+amount_off = msrp * discount_percent
+discounted_price = msrp - amount_off
+
+#3. Output
+print("\n--- Auto Summary ---")
+print(f"Make: {make}")
+print(f"Model: {model}")
+print(f"MSRP Amount: ${msrp:,.2f}")
+print(f"Discount Percent: {discount_percent:.2%}")
+print(f"Amount Off: ${amount_off:,.2f}")
+print(f"Discounted Price: ${discounted_price:,.2f}")

@@ -1,0 +1,27 @@
+"""
+IPO Chart - Problem 5 (M3P5)
+============================
+INPUT:
+-Radius (float)
+PROCESS:
+-Area = 3.14 * (Radius ** 2)
+-Perimeter = 2 * 3.14 * Radius
+OUTPUT:
+- Radius
+- Area (Formatted to 2 decimal places)
+- Perimeter (Formatted to 2 decimal places)
+============================
+"""
+
+#1. Inputs
+radius=float(input("Enter the Radius: "))
+
+#2. Processing
+area=3.14*(radius**2)
+perimeter=2*3.14*radius
+
+#3. Output
+print("\n--- Circle Summary ---")
+print(f"Radius: {radius}")
+print(f"Area: {area:,.2f}")
+print(f"Perimeter: {perimeter:,.2f}")

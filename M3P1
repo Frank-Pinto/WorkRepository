@@ -1,0 +1,30 @@
+"""
+IPO Chart - Problem 1 (M3P1)
+----------------------------
+INPUT:
+- Ticker Symbol (string)
+- Number of Shares (integer)
+- Cost per Share (float)
+PROCESS:
+- Total Invested = Number of Shares * Cost per Share
+OUTPUT:
+- Ticker Symbol
+- Number of Shares
+- Cost per Share (Formatted to 2 decimal places)
+============================
+"""
+
+# 1. Inputs
+ticker=input("Enter the Ticker Symbol: ")
+shares=int(input("Enter the Number of Shares: "))
+cost_per_share=float(input("Enter the Cost per Share: "))
+
+#2. Processing
+total_invested=shares*cost_per_share
+
+#3. Output
+print("\n--- Investment Summary ---")
+print(f"Stock Ticker: {ticker.upper()}")
+print(f"Number of Shares: {shares:,.2f}")
+print(f"Cost per Share: ${cost_per_share:,.2f}")
+print(f"Total Invested: ${total_invested:,.2f}")
