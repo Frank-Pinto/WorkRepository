@@ -1,0 +1,26 @@
+"""
+================
+INPUTS:
+Exam 1 Score 
+Exam 2 Score 
+PROCESS:
+Total Score= ((Exam 1 Score*0.6)+(Exam 2 Score*0.4))
+OUTPUTS:
+Exam 1 Score
+Exam 2 Score
+Total Score (Formatted to 2 decimal places)
+================
+"""
+
+#1. Inputs
+exam1=float(input("Enter Exam 1 Score"))
+exam2=float(input("Enter Exam 2 Score"))
+
+#2 Processing 
+total_score=(exam1*0.6)+(exam2*0.4)
+
+#3 Output
+print("\n--- Exam Summary ---") 
+print(f"Exam 1 Score: {exam1}")
+print(f"Exam 2 Score: {exam2}")
+print(f"Total Score: {total_score:,.2f}")

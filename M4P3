@@ -1,0 +1,41 @@
+"""
+===========
+INPUTS:
+Meal total
+PROCESS:
+Tip15% = Meal total * 0.15
+Tip18% = Meal total * 0.18
+Tip20% = Meal total * 0.20
+Total with 15% tip = Meal total + Tip15%
+Total with 18% tip = Meal total + Tip18%
+Total with 20% tip = Meal total + Tip20%
+OUTPUTS:
+Meal total
+Tip15% (Formatted to 2 decimal places)
+Tip18% (Formatted to 2 decimal places)
+Tip20% (Formatted to 2 decimal places)
+Total with 15% tip (Formatted to 2 decimal places)
+Total with 18% tip (Formatted to 2 decimal places)
+Total with 20% tip (Formatted to 2 decimal places)
+===========
+"""
+
+#1. Inputs
+meal_total=float(input("Enter Meal Total: "))
+
+#2. Processing
+tip_15=meal_total*0.15
+tip_18=meal_total*0.18
+tip_20=meal_total*0.20
+total_with_15=meal_total+tip_15
+total_with_18=meal_total+tip_18
+total_with_20=meal_total+tip_20
+#3. Output
+print("\n--- Tip Summary ---")
+print(f"Meal Total: {meal_total}")
+print(f"Tip 15%: {tip_15:,.2f}")
+print(f"Tip 18%: {tip_18:,.2f}")
+print(f"Tip 20%: {tip_20:,.2f}")
+print(f"Total with 15% tip: {total_with_15:,.2f}")
+print(f"Total with 18% tip: {total_with_18:,.2f}")
+print(f"Total with 20% tip: {total_with_20:,.2f

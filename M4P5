@@ -1,0 +1,30 @@
+"""
+==========
+INPUTS:
+Fixed costs
+Variable costs
+Revenue per Unit
+PROCESS:
+Break-even point = Fixed costs / (Revenue per Unit - Variable costs)
+OUTPUTS:
+Fixed costs
+Variable costs
+Revenue per Unit
+Break-even point (Formatted to 2 decimal places)
+==========
+"""
+
+#1. Inputs
+fixed_costs=float(input("Enter Fixed Costs: "))
+variable_costs=float(input("Enter Variable Costs: "))
+revenue_per_unit=float(input("Enter Revenue per Unit: "))
+
+#2. Processing
+break_even_point=fixed_costs/(revenue_per_unit-variable_costs)
+
+#3. Output
+print("\n--- Break-Even Summary ---")
+print(f"Fixed Costs: {fixed_costs}")
+print(f"Variable Costs: {variable_costs}")
+print(f"Revenue per Unit: {revenue_per_unit}")
+print(f"Break-Even Point: {break_even_point:,.2f}")

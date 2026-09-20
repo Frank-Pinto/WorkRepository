@@ -1,0 +1,26 @@
+"""
+=========
+INPUTS:
+First Name
+# of Steps
+PROCESS:
+Calories burned = # of Steps * 0.25
+OUTPUTS:
+First Name
+# of Steps
+Calories burned (Formatted to 2 decimal places)
+=========
+"""
+
+#1. Inputs
+first_name=input("Enter First Name: ")
+num_steps=float(input("Enter # of Steps: "))
+
+#2. Processing
+calories_burned=num_steps*0.25
+
+#3. Output
+print("\n--- Daily Steps Summary ---")
+print(f"First Name: {first_name}")
+print(f"# of Steps: {num_steps}")
+print(f"Calories burned: {calories_burned:,.2f}")

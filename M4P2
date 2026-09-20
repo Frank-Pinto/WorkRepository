@@ -1,0 +1,36 @@
+"""
+=============
+INPUTS:
+Current Price per Share
+Number of Shares Owned
+Purchase Price per Share
+Worth of Shares Owned
+Original Worth of Shares Owned
+PROCESS:
+Net Gain/Loss = (Current Price per Share - Purchase Price per Share) * Number of Shares Owned
+Original Worth of Shares Owned = Purchase Price per Share * Number of Shares Owned
+Worth of Shares Owned = Current Price per Share * Number of Shares Owned
+OUTPUTS:
+Current Price per Share
+Number of Shares Owned
+Worth of Shares Owned
+Net Gain/Loss (Formatted to 2 decimal places)
+=============
+"""
+
+#1. Inputs
+current_price=float(input("Enter Current Price per Share: "))
+num_shares=float(input("Enter Number of Shares Owned: "))
+
+#2. Processing
+Original_worth_of_shares=purchase_price*num_shares
+worth_of_shares=current_price*num_shares
+purchase_price=float(input("Enter Purchase Price per Share: "))
+net_gain_loss=(current_price-purchase_price)*num_shares
+
+#3. Output
+print("\n--- Stock Summary ---")
+print(f"Current Price per Share: {current_price}")
+print(f"Number of Shares Owned: {num_shares}")
+print(f"Worth of Shares Owned: {worth_of_shares:,.2f}")
+print(f"Net Gain/Loss: {net_gain_loss:,.2f}")
