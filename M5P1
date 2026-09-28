@@ -1,0 +1,27 @@
+"""
+============
+INPUTS:
+Quantity
+PROCESS:
+Price = Quantity <= 1000
+OUTPUTT:
+Bulkprice
+Standardprice
+============+
+"""
+
+#1 Inputs
+Quantity=float(input("Enter Quantity of items to be purchased:  "))
+#2. Process
+if Quantity>=1000:
+    Price=(Quantity*3.00)
+    Bulkprice=Price+(Price*0.07)
+else:
+    Price= Quantity*5.00
+    Standardprice= Price +(Price*0.07)
+#2 Output
+if Quantity>= 1000: 
+    print("Your bulk order cost is:", Bulkprice)
+else:
+    print("Your standard order cost is:", Standardprice)
+print("Thank you for your order")

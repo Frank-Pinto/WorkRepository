@@ -1,0 +1,34 @@
+"""
+============
+INPUTS:
+Quantity
+Model
+PROCESS:
+PriceA = Quantity * 10.00
+PriceB = Quantity * 20.00
+OUTPUT:
+Price
+============
+"""
+
+#1 Inputs
+Model=str(input("What model are you purchasing? (A or B):  "))
+Quantity=float(input("Enter Quantity of items to be purchased:  "))
+ModelAPrice = 10.00
+ModelBPrice = 20.00
+
+#2. Process
+if Model == "A":
+    UnitPrice = ModelAPrice
+elif Model == "B":
+    UnitPrice = ModelBPrice
+else:
+    print("Please enter A or B.")
+    UnitPrice = 0
+
+Price = Quantity * UnitPrice
+
+#3 Output
+if Model == "A" or Model == "B":
+    print("Cost per unit is: $", UnitPrice)
+    print("Total cost is: $", Price)

@@ -1,0 +1,34 @@
+"""
+============
+INPUTS:
+Quantity
+UnitPrice
+PROCESS:
+GrossPrice = Quantity * UnitPrice
+StandardPrice = GrossPrice + 25
+FreeShippingPrice = GrossPrice + 0
+OUTPUTS:
+StandardPrice
+FreeShippingPrice
+============
+"""
+
+#1 Inputs
+Quantity=float(input("Enter Quantity of books to be purchased:  "))
+UnitPrice=float(input("Enter the price per book:  "))
+FSGP = 50
+#2 Process
+GrossPrice = Quantity * UnitPrice
+if GrossPrice >= FSGP:
+    FreeShippingPrice = GrossPrice + 0
+else:
+    StandardPrice = GrossPrice + 25
+
+#3 Outputs
+if GrossPrice >= FSGP:
+    print("You Have Free Shipping!")
+    print("Your total cost is: $", FreeShippingPrice)
+else:
+    print("Your gross price is: $", GrossPrice)
+    print("Standard shipping is $25.0")
+    print("Your total cost with standard shipping is: $", StandardPrice)

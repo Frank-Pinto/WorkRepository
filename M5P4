@@ -1,0 +1,34 @@
+"""
+============
+INPUTS:
+ApplianceName
+ApplianceCost
+PROCESS:
+WarrantyCost = ApplianceCost * WarrantyRate
+TotalCost = ApplianceCost + WarrantyCost
+OUTPUT:
+ApplianceName
+ApplianceCost
+WarrantyCost
+TotalCost
+============
+"""
+
+#1 Inputs
+ApplianceName = input("Enter the name of the appliance: ")
+ApplianceCost = float(input("Enter the cost of the appliance: $"))
+
+#2. Process
+if ApplianceCost > 1000:
+    WarrantyRate = 0.10
+else:
+    WarrantyRate = 0.05
+
+WarrantyCost = ApplianceCost * WarrantyRate
+TotalCost = ApplianceCost + WarrantyCost
+
+#3 Output
+print("Appliance:", ApplianceName)
+print("Appliance cost: $", ApplianceCost)
+print("Warranty cost: $", WarrantyCost)
+print("Total cost: $", TotalCost)

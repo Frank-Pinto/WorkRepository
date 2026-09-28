@@ -1,0 +1,47 @@
+"""
+=========
+INPUTS:
+LastName
+GrossIncome
+Dependents
+PROCESS:
+AdjustedIncome = GrossIncome - (Dependents * 12000)
+if AdjustedIncome > 50000:
+    TaxRate = Midtaxrate
+else:
+    TaxRate = Lowtaxrate
+TaxAmount = AdjustedIncome * TaxRate
+if TaxAmount < 0:
+    TaxAmount = 100
+OUTPUT:
+LastName
+GrossIncome
+Dependents
+AdjustedIncome
+IncomeTax
+=========
+"""
+
+#1 Inputs
+LastName = input("Enter your last name: ")
+GrossIncome = float(input("Enter your gross income: $"))
+Dependents = int(input("Enter the number of dependents: "))
+
+#2 Process
+AdjustedIncome = GrossIncome - (Dependents * 12000)
+Lowtaxrate = 0.10
+Midtaxrate = 0.20
+if AdjustedIncome > 50000:
+    TaxRate = Midtaxrate
+else:
+    TaxRate = Lowtaxrate
+TaxAmount = AdjustedIncome * TaxRate
+if TaxAmount < 0:
+    TaxAmount = 100
+
+#3 Outputs
+print("Last Name:", LastName)
+print("Gross Income: $", GrossIncome)
+print("Number of Dependents:", Dependents)
+print("Adjusted Income: $", AdjustedIncome)
+print("Income Tax: $", TaxAmount)
