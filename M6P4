@@ -1,0 +1,36 @@
+"""
+======
+Input:
+Quantity of Tickets
+Process:
+If quantity >= 25 unit price = 50
+If quantity is from 10 to 24 unit price = 60
+if quantity is from 5 to 9 unit price = 70
+else unit price = 75
+total = quantity * unit price
+Output:
+Total
+Quantity of Tickets
+Price per Ticket
+======
+"""
+
+#1. Input
+quantity = int(input("Enter quantity of tickets: "))
+
+#2. Process
+if quantity >= 25:
+    unit_price = 50
+elif 10 <= quantity <= 24:
+    unit_price = 60
+elif 5 <= quantity <= 9:
+    unit_price = 70
+else:
+    unit_price = 75
+
+total = quantity * unit_price
+
+#3. Output
+print(f"Total: ${total:.2f}")
+print(f"Quantity of Tickets: {quantity}")
+print(f"Price per Ticket: ${unit_price:.2f}")

@@ -1,0 +1,37 @@
+"""
+=========
+Input:
+Last name
+Salary
+Job Level
+Process:
+if job level >= 10 bonus rate = 25%
+if job level >= 5 and job level <= 9 bonus rate = 20%
+else bonus rate = 10%
+bonus = salary * bonus rate
+Output:
+Last name
+Bonus Rate
+Bonus
+=========
+"""
+
+#1. Input
+last_name = input("Enter last name: ")
+salary = float(input("Enter salary: "))
+job_level = int(input("Enter job level: "))
+
+#2. Process
+if job_level >= 10:
+    bonus_rate = 0.25
+elif 5 <= job_level <= 9:
+    bonus_rate = 0.20
+else:
+    bonus_rate = 0.10
+
+bonus = salary * bonus_rate
+
+#3. Output
+print(f"Last Name: {last_name}")
+print(f"Bonus Rate: {bonus_rate:.2%}")
+print(f"Bonus: ${bonus:.2f}")

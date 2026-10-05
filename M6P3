@@ -1,0 +1,36 @@
+"""
+-------
+Input:
+CD principle
+CD Yr to Maturity
+Process:
+if CD principle > 100000 and CD yr to maturity = 5, interest rate = 0.06
+if 50000 < CD principle <= 100000 and CD yr to maturity = 10, interest rate = 0.05
+if 50000 < CD principle <= 100000 and CD yr to maturity = 5, interest rate = 0.04
+else interest rate = 0.02
+First year interest = CD principle * interest rate
+Output:
+Interest Rate
+First year interest
+-------
+"""
+
+#1. Input
+cd_principle = float(input("Enter CD principle: "))
+cd_yr_to_maturity = int(input("Enter CD year to maturity: "))
+
+#2. Process
+if cd_principle > 100000 and cd_yr_to_maturity == 5:
+    interest_rate = 0.06
+elif 50000 < cd_principle <= 100000 and cd_yr_to_maturity == 10:
+    interest_rate = 0.05
+elif 50000 < cd_principle <= 100000 and cd_yr_to_maturity == 5:
+    interest_rate = 0.04
+else:
+    interest_rate = 0.02
+
+first_year_interest = cd_principle * interest_rate
+
+#3. Output
+print(f"Interest Rate: {interest_rate:.2%}")
+print(f"First Year Interest: ${first_year_interest:.2f}")
