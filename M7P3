@@ -1,0 +1,10 @@
+response = input("Do you want to run this program? (yes/no): ")
+while response == "yes":
+    lastname = input("Enter last name: ")
+    examscore1 = float(input("Enter first exam score: "))
+    examscore2 = float(input("Enter second exam score: "))
+
+    average = (examscore1 + examscore2) / 2
+    print(f"{lastname}'s average score is: {average}")
+
+    response = input("Do you want to run this program again? (yes/no): ")

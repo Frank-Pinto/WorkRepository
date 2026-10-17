@@ -1,0 +1,19 @@
+response = input("Do you want to run this program? (yes/no): ")
+
+while response == "yes":
+    quantity = int(input("Enter quantity of items purchased: "))
+    price = float(input("Enter price per item: "))
+    subtotal = quantity * price
+
+    if subtotal >= 10000:
+        discount = 0.25 * subtotal
+        total_cost = subtotal - discount
+        print(f"The total cost with a 25% bulk discount is: ${total_cost:.2f}")
+        print(f"You saved ${discount:.2f} with the bulk discount.")
+    else:
+        discount = 0.10 * subtotal
+        total_cost = subtotal - discount
+        print(f"The total cost with a 10% discount is: ${total_cost:.2f}")
+        print(f"You saved ${discount:.2f} with the regular discount.")
+
+    response = input("Do you want to run this program again? (yes/no): ")

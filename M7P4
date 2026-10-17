@@ -1,0 +1,14 @@
+response = input("Do you want to run this program? (yes/no): ")
+while response == "yes":
+    lastname = input("Enter employee last name: ")
+    hoursworked = float(input("Enter number of hours worked: "))
+    hourlyrate = float(input("Enter hourly rate: "))
+    grosspay = hoursworked * hourlyrate
+    if hoursworked > 40:
+        overtimehours = hoursworked - 40
+        overtimepay = overtimehours * (hourlyrate * 1.5)
+        totalpay = grosspay + overtimepay
+    else:
+        totalpay = grosspay
+    print(f"{lastname}'s total pay is: ${totalpay}")
+    response = input("Do you want to run this program again? (yes/no): ")

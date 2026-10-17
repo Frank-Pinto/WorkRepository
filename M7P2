@@ -1,0 +1,16 @@
+"""
+===========
+INPUTS:
+startvalue
+stopvalue
+incrementvalue
+===========
+"""
+# inputs
+startvalue = int(input("Enter the starting value: "))
+stopvalue = int(input("Enter the stopping value: "))
+incrementvalue = int(input("Enter the increment value: "))
+
+# Count up and display numbers from startvalue to stopvalue increasing by incrementvalue
+for number in range(startvalue, stopvalue, incrementvalue):
+	print(number)
