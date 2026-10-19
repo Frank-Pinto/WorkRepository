@@ -1,0 +1,8 @@
+print("Fibonacci sequence (first 20 numbers):")
+fib1 = 1
+fib2 = 1
+for i in range(20):
+    print(fib1)
+    fib_next = fib1 + fib2
+    fib1 = fib2
+    fib2 = fib_next

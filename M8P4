@@ -1,0 +1,22 @@
+Summaries = []
+
+while True:
+    item = input("Enter the item name (or if you are finished shopping, press Enter): ").strip()
+    if not item:
+        break
+
+    price = float(input("Enter the price of the item: "))
+    quantity = int(input("Enter the quantity of the item: "))
+    total_cost = price * quantity
+
+    Summaries.append(
+        f"{item}\n"
+        f"${price:.2f}\n"
+        f"{quantity}\n"
+        f"${total_cost:.2f}"
+    )
+
+with open("shopping_summary.txt", "w") as file:
+    file.write("\n\n".join(Summaries))
+print("Summary saved to shopping_summary.txt")
+

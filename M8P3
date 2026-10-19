@@ -1,0 +1,30 @@
+summaries = []
+
+while True:
+    lastname = input("Enter a last name (or press Enter to finish): ").strip()
+    if not lastname:
+        break
+
+    salary = float(input("Enter salary (maximum $250,000): "))
+
+    if salary < 50000:
+        raise_rate = 0.10
+    elif salary < 100000:
+        raise_rate = 0.15
+    else:
+        raise_rate = 0.20
+
+    raise_amount = salary * raise_rate
+    total_salary = salary + raise_amount
+    summaries.append(
+        f"{lastname}\n"
+        f"{raise_rate:.0%}\n"
+        f"${raise_amount:.2f}\n"
+        f"${total_salary:.2f}"
+    )
+
+with open("raise_summary.txt", "w") as file:
+    file.write("\n\n".join(summaries))
+
+print("Summary saved to raise_summary.txt")
+

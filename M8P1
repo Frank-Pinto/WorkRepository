@@ -1,0 +1,15 @@
+principal = float(input("Enter principle amount: "))
+rate = float(input("Enter interest rate in decimal form: "))
+
+print(f"{'Year':<12}{'Beginning balance':>15}{'Ending balance':>15}")
+
+for year in range(1, 6):
+    interest = principal * rate
+    balance = principal + interest
+    total_interest =interest*year
+
+    print(f"{year:<12}{principal:>15.2f}{balance:>15.2f}")
+
+    principal = balance
+
+print (f"Total interest earned: ${total_interest:.2f}")

@@ -1,0 +1,25 @@
+Summaries = []
+
+while True:
+    Student_name = input("Enter the student's last name (or press Enter to finish): ").strip()
+    if not Student_name:
+        break
+
+    District_code = input("Enter the district code(I/O): ").strip()
+    credit_hours = int(input("Enter the number of credit hours: "))
+
+    if District_code.upper() == "I":
+        tuition_rate = 250.00
+    elif District_code.upper() == "O":
+        tuition_rate = 500.00
+    else:
+        print("Invalid district code. Please enter 'I' for in-state or 'O' for out-of-state.")
+        continue
+
+    total_tuition = tuition_rate * credit_hours
+    Summary = f"Student: {Student_name}, District: {District_code}, Credit Hours: {credit_hours}, Total Tuition: ${total_tuition:.2f}"
+    Summaries.append(Summary)
+
+with open("tuition_summary.txt", "w") as file:
+    file.write("\n\n".join(Summaries))
+print("Summary saved to tuition_summary.txt")
