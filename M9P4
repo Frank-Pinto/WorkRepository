@@ -1,0 +1,48 @@
+# Promt user to enter last name, job code, and hours worked
+# Use functions to calculate pay based on job code (L, A, J) and hours worked.
+# Give time and a half for overtime hours (hours over 40)
+# The loop continues until the user decides to stop.
+# At end, sum and display all gross pay for all employees entered.
+
+# Calculate an employee's gross pay using their job code and hours worked.
+def calculate_pay(job_code, hours_worked):
+    # Choose the hourly rate for the employee's job code.
+    hourly_rate = 0
+    if job_code == "L":
+        hourly_rate = 25
+    elif job_code == "A":
+        hourly_rate = 30
+    elif job_code == "J":
+        hourly_rate = 50
+    else:
+        hourly_rate = 0
+
+    # Pay regular hours at the normal rate.
+    if hours_worked <= 40:
+        return hours_worked * hourly_rate
+    else:
+        # Pay hours over 40 at time and a half.
+        overtime_hours = hours_worked - 40
+        return 40 * hourly_rate + overtime_hours * hourly_rate * 1.5
+
+# Start the total pay at zero.
+total_gross_pay = 0
+
+# Keep asking for employees until the user enters n.
+while True:
+    stop = input("Do you want to continue? (y/n): ").strip().lower()
+    if stop != "y":
+        break
+
+    # Get the employee's name, job code, and hours worked.
+    last_name = input("Enter employee's last name: ")
+    job_code = input("Enter job code (L, A, J): ").strip().upper()
+    hours_worked = float(input("Enter hours worked: "))
+
+    # Calculate this employee's pay and add it to the total.
+    gross_pay = calculate_pay(job_code, hours_worked)
+    total_gross_pay += gross_pay
+    print(f"Employee: {last_name}, Job Code: {job_code}, Hours Worked: {hours_worked}, Gross Pay: {gross_pay:.2f}")
+
+# Display the combined gross pay for all employees.
+print(f"Total Gross Pay for all employees: {total_gross_pay:.2f}")

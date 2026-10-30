@@ -1,0 +1,23 @@
+# Start the trip count at zero.
+trip_count = 0
+
+# Keep asking for trips until the user enters n.
+while True:
+    stop = input("Do you want to continue? (y/n): ").strip().lower()
+    if stop != "y":
+        break
+
+    # Get the destination, miles traveled, and gallons used.
+    destination = input("Enter destination city: ")
+    miles = float(input("Enter miles traveled: "))
+    gallons = float(input("Enter gallons used: "))
+
+    # Calculate miles per gallon, avoiding division by zero.
+    miles_per_gallon = miles / gallons if gallons > 0 else 0
+
+    # Count and display this trip's information.
+    trip_count += 1
+    print(f"Trip: {destination}, Miles: {miles}, Gallons: {gallons}, Miles per Gallon: {miles_per_gallon:.2f}")
+
+# Display the number of trips entered.
+print(f"Number of trips entered: {trip_count}")

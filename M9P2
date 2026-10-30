@@ -1,0 +1,24 @@
+# Start the player count at zero.
+player_count = 0
+
+# Keep asking for players until the user enters n.
+while True:
+    stop = input("Do you want to continue? (y/n): ").strip().lower()
+    if stop != "y":
+        break
+
+    # Get the player's name, hits, and at-bats.
+    Last_name = input("Enter player's last name: ")
+    Totalhits = int(input("Enter player's total hits: "))
+    Totalatbats = int(input("Enter player's total at-bats: "))
+
+    # Calculate the average, unless the player has no at-bats.
+    Batting_average = Totalhits / Totalatbats if Totalatbats > 0 else 0
+
+    # Count and display this player's information.
+    player_count += 1
+    print(f"Player: {Last_name}, Batting Average: {Batting_average:.3f}")
+
+# Display the number of players entered.
+print(f"Number of players entered: {player_count}")
+

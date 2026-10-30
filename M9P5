@@ -1,0 +1,35 @@
+# Allow the user to enter student last name, credit hours and district code
+# Use a function to compute tuition owed based on credit hours and district code.
+# Charge In district (code of I) $250 per credit hour. Out of district (code of O) is $550 per credit hour.
+# The loop continues until the user decides to stop.
+# Display sum of all tuition owed for all students entered.
+# Function to compute tuition owed based on credit hours and district code.
+def compute_tuition(credit_hours, district_code):
+    if district_code == "I":
+        return credit_hours * 250
+    elif district_code == "O":
+        return credit_hours * 550
+    else:
+        return 0
+
+# Start the total tuition at zero.
+total_tuition = 0
+
+# Keep asking for students until the user enters n.
+while True:
+    stop = input("Do you want to continue? (y/n): ").strip().lower()
+    if stop != "y":
+        break
+
+    # Get the student's last name, credit hours, and district code.
+    last_name = input("Enter student's last name: ")
+    credit_hours = int(input("Enter credit hours: "))
+    district_code = input("Enter district code (I/O): ").strip().upper()
+
+    # Calculate this student's tuition and add it to the total.
+    tuition = compute_tuition(credit_hours, district_code)
+    total_tuition += tuition
+    print(f"Student: {last_name}, Credit Hours: {credit_hours}, District Code: {district_code}, Tuition: {tuition:.2f}")
+
+# Display the combined tuition for all students.
+print(f"Total Tuition for all students: {total_tuition:.2f}")
