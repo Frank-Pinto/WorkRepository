@@ -1,0 +1,37 @@
+total_market_value = 0
+total_assessed_value = 0
+
+while True:
+    # Prompt user for county name and property market value.
+    county_name = input("Enter the county name: ").strip()
+    county = county_name.lower()
+    market_value = float(input("Enter the property market value: "))
+
+    # Choose the assessed value % based on the county name.
+    if county == "cook":
+        assessed_value = market_value * 0.9
+    elif county == "dupage":
+        assessed_value = market_value * 0.8
+    elif county == "mchenry":
+        assessed_value = market_value * 0.75
+    elif county == "kane":
+        assessed_value = market_value * 0.6
+    else:
+        assessed_value = market_value * 0.7
+
+    # Add the market and assessed values to the running totals.
+    total_market_value += market_value
+    total_assessed_value += assessed_value
+
+
+    # Display the market and assessed values for this property.
+    print(f"The market value for the property in {county_name} County is: ${market_value:,.2f}")
+    print(f"The assessed value for the property in {county_name} County is: ${assessed_value:,.2f}")
+
+    answer = input("Would you like to enter another property? (Yes or No): ").strip().lower()
+    if answer != "yes":
+        break
+
+# Display the combined values for all properties.
+print(f"Total market value: ${total_market_value:,.2f}")
+print(f"Total assessed value: ${total_assessed_value:,.2f}")

@@ -1,0 +1,39 @@
+# This function calculates next month's sales from the month and current sales.
+def next_month_forecast(month, sales):
+    # Use the first three letters to match full month names or abbreviations.
+    month = month.lower()[:3]
+
+    # Define the forecast percentage based on the month.
+    if month in ("jan", "feb", "mar"):
+        forecast_percent = 0.10
+    elif month in ("apr", "may", "jun"):
+        forecast_percent = 0.15
+    elif month in ("jul", "aug", "sep"):
+        forecast_percent = 0.20
+    elif month in ("oct", "nov", "dec"):
+        forecast_percent = 0.25
+
+    # Return the current sales plus the forecast increase.
+    return sales * (1 + forecast_percent)
+
+
+# Keep asking whether the user wants to enter another sales forecast.
+while True:
+    # Ask whether the user wants to continue.
+    answer = input("Would you like to enter sales? (Yes or No): ").lower()
+
+    # End the program when the user answers No.
+    if answer == "no":
+        break
+
+    # Collect the information and display the forecast when the user answers Yes.
+    if answer == "yes":
+        last_name = input("Enter your last name: ")
+        month = input("Enter the month: ")
+        sales = float(input("Enter sales: "))
+
+        forecast_sales = next_month_forecast(month, sales)
+        print(f"{last_name}'s next month's forecast sales: ${forecast_sales:,.2f}")
+    # Ask again if the response is not Yes or No.
+    else:
+        print("Please enter Yes or No.")

@@ -1,0 +1,48 @@
+total_msrp = 0
+total_sales_price = 0
+
+while True:
+    # Get the car make and model, or select the electric car discount.
+    make_model = input("Enter the make and model of the car (or type 'Electric Car' for an electric vehicle): ")
+
+    # Choose the discount based on the car make and model.
+    if make_model == "Honda Accord":
+        discount = 0.10
+    elif make_model == "Toyota Rav4":
+        discount = 0.15
+    elif make_model == "Electric Car":
+        discount = 0.30
+    else:
+        discount = 0.05
+
+    # Get the car's MSRP.
+    msrp = float(input("Enter the MSRP of the car: "))
+
+    # Calculate the discount, sales tax, and final price.
+    discount_amount = msrp * discount
+    sales_tax_amount = (msrp - discount_amount) * 0.07
+    final_price = msrp - discount_amount + sales_tax_amount
+
+    # Add this car's prices to the running totals.
+    total_msrp += msrp
+    total_sales_price += final_price
+
+    # Display the price details.
+    print(f"Discount amount: ${discount_amount:,.2f}")
+    print(f"Sales tax: ${sales_tax_amount:,.2f}")
+    print(f"Final price for the {make_model}: ${final_price:,.2f}")
+
+    # Ask whether to calculate another car.
+    answer = input("Would you like to calculate another car? (Yes or No): ").strip().lower()
+    if answer == "no":
+        break
+    while answer != "yes":
+        answer = input("Please enter Yes or No: ").strip().lower()
+        if answer == "no":
+            break
+    if answer == "no":
+        break
+
+# Display the combined MSRP and final sales prices for all cars.
+print(f"Total MSRP for all cars: ${total_msrp:,.2f}")
+print(f"Total sales price for all cars: ${total_sales_price:,.2f}")

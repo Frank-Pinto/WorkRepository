@@ -1,0 +1,30 @@
+# This function calculates the wall square footage of a room.
+def wall_square_footage(length, width, height):
+    wall1 = length * height
+    wall2 = width * height
+    return 2 * (wall1 + wall2)
+
+# This function calculates the area of the floor or ceiling.
+def floor_or_ceiling_area(length, width):
+    return length * width
+
+# This function estimates gallons needed at 50 square feet per gallon.
+def gallons_needed(area):
+    return area / 50
+
+# Get the room dimensions from the user.
+length = float(input("Enter the length of the room in feet: "))
+width = float(input("Enter the width of the room in feet: "))
+height = float(input("Enter the height of the room in feet: "))
+
+# Calculate the wall and ceiling areas, then estimate the gallons needed.
+wall_sq_ft = wall_square_footage(length, width, height)
+ceiling_sq_ft = floor_or_ceiling_area(length, width)
+wall_paint_gallons = gallons_needed(wall_sq_ft)
+ceiling_paint_gallons = gallons_needed(ceiling_sq_ft)
+
+# Display the area and paint estimates.
+print(f"The wall square footage is: {wall_sq_ft:.2f} square feet.")
+print(f"The amount of wall paint needed is: {wall_paint_gallons:.2f} gallons.")
+print(f"The ceiling square footage is: {ceiling_sq_ft:.2f} square feet.")
+print(f"The amount of ceiling paint needed is: {ceiling_paint_gallons:.2f} gallons.")

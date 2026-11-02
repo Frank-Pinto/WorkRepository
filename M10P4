@@ -1,0 +1,35 @@
+total_tix_price = 0
+
+while True:
+    # Get train ticket price based on distance traveled.
+    distance = float(input("Enter the distance traveled to downtown Chicago in miles: "))
+
+    # Choose the ticket price based on the distance traveled.
+    if distance < 10:
+        tix_price = 5.00
+    elif 10 <= distance <= 20:
+        tix_price = 8.00
+    elif 20 < distance <= 29:
+        tix_price = 10.00
+    else:
+        tix_price = 12.00
+
+    # Display the cost of this ticket.
+    print(f"Ticket cost for {distance:g} miles: ${tix_price:.2f}")
+
+    # Add the ticket price to the running total.
+    total_tix_price += tix_price
+
+    # Ask whether to calculate another ticket.
+    answer = input("Would you like to calculate another ticket? (Yes or No): ").strip().lower()
+    if answer == "no":
+        break
+    while answer != "yes":
+        answer = input("Please enter Yes or No: ").strip().lower()
+        if answer == "no":
+            break
+    if answer == "no":
+        break
+
+# Display the combined ticket price for all tickets.
+print(f"Total ticket price for all tickets: ${total_tix_price:,.2f}")
