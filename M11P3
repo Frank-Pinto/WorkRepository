@@ -1,0 +1,29 @@
+# Calculate and return commission and next years target sales.
+def calculate_commission(sales):
+    # Use 10% commission above $100,000, otherwise use 5%.
+    if sales > 100000:
+        commission_rate = 0.10
+    else:
+        commission_rate = 0.05
+
+    # Calculate commission and set next year's target 5% above sales.
+    commission_earned = sales * commission_rate
+    next_year_target_sales = sales * 1.05
+    return commission_earned, next_year_target_sales
+
+def main():
+    # Get the salesperson's last name and sales amount.
+    last_name = input("Enter the salesperson's last name: ")
+    sales = float(input("Enter the sales amount: $"))
+
+    # Get commission and next year's sales target from the function.
+    commission_earned, next_year_target_sales = calculate_commission(sales)
+
+    # Display the salesperson's name, commission earned, and next year's target sales.
+    print(f"Salesperson Name: {last_name}")
+    print(f"Commission Earned: ${commission_earned:,.2f}")
+    print(f"Next Year's Target Sales: ${next_year_target_sales:,.2f}")
+
+# Run main() when this file is started as a program.
+if __name__ == "__main__":
+    main()

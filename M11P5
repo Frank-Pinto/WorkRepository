@@ -1,0 +1,28 @@
+# Global variables store the calculated total and tax.
+total = 0.0
+tax = 0.0
+
+
+# Calculate the purchase total and 7% tax, updating the global variables.
+def calculate_total_and_tax(quantity, unit_price):
+    global total, tax
+
+    # Multiply quantity by unit price and calculate 7% tax.
+    total = quantity * unit_price
+    tax = total * 0.07
+
+def main():
+    # Get the quantity and unit price from the user.
+    quantity = int(input("Enter the quantity: "))
+    unit_price = float(input("Enter the unit price: $"))
+
+    # Calculate total and tax, storing the results in global variables.
+    calculate_total_and_tax(quantity, unit_price)
+
+    # Display the total price and tax amount.
+    print(f"Total: ${total:,.2f}")
+    print(f"Tax (7%): ${tax:,.2f}")
+
+# Run main() when this file is started as a program.
+if __name__ == "__main__":
+    main()

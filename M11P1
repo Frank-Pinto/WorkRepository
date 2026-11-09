@@ -1,0 +1,32 @@
+# Calculate the discount amount and final price for all items.
+def calculate_discount(quantity, price, discount_rate):
+    # Find the price of the full quantity before the discount.
+    total_price = quantity * price
+    # Apply the discount rate to the total price.
+    discount_amount = total_price * discount_rate
+    # Subtract the discount to get the final price.
+    discounted_price = total_price - discount_amount
+    # Return both values so main() can display them.
+    return discount_amount, discounted_price
+
+
+def main():
+    # Get the purchase details from the user.
+    quantity = int(input("Enter the quantity: "))
+    price = float(input("Enter the price per item: $"))
+    discount_rate = float(input("Enter the discount rate (e.g. 0.1 for 10% off): "))
+
+    # Calculate the discount and discounted total.
+    discount_amount, discounted_price = calculate_discount(
+        quantity, price, discount_rate)
+
+    # Display the purchase details and calculated amounts.
+    print(f"Quantity: {quantity}")
+    print(f"Price per item: ${price:,.2f}")
+    print(f"Discount amount: ${discount_amount:,.2f}")
+    print(f"Discounted price: ${discounted_price:,.2f}")
+
+
+# Run main() when this file is started as a program.
+if __name__ == "__main__":
+    main()

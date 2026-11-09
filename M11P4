@@ -1,0 +1,29 @@
+# Calculate average bowling score and average bowling score with a handicap
+def calculate_bowling_scores(score1, score2, score3, handicap):
+    # Calculate the total score by adding the three scores.
+    total_score = score1 + score2 + score3
+    # Calculate the average score by dividing the total by 3.
+    average_score = total_score / 3
+    # Calculate the average score with handicap by adding the handicap to the average score.
+    average_with_handicap = average_score + handicap
+    return average_score, average_with_handicap
+
+def main():
+    # Get the bowler's name and three scores from the user.
+    last_name = input("Enter the bowler's last name: ")
+    score1 = float(input("Enter the score for Game 1: "))
+    score2 = float(input("Enter the score for Game 2: "))
+    score3 = float(input("Enter the score for Game 3: "))
+    handicap = float(input("Enter the handicap: "))
+
+    # Get both calculated values from the function.
+    average_score, average_with_handicap = calculate_bowling_scores(score1, score2, score3, handicap)
+
+    # Display the bowler's name, average score, and average score with handicap.
+    print(f"Bowler Name: {last_name}")
+    print(f"Average Score: {average_score:.2f}")
+    print(f"Average Score with Handicap: {average_with_handicap:.2f}")
+
+# Run main() when this file is started as a program.
+if __name__ == "__main__":
+    main()
